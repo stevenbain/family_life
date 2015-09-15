@@ -1,12 +1,12 @@
 <div class="jumbotron center">
-<div class="well"><h1>Welcome to Family Life</h1>
-  <div class="well"><p>Photo Archive | Share | Save For Ever | Access anywhere @ Anytime!</p>
-
-  <div class="row">
-    <div class="col-md-8">
-      <button type="button" class="btn btn-success btn-lg btn-block">
-<span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
-      Sign In</button>
-</div>
-    <div class="col-md-4">  <button type="button" class="btn btn-info btn-lg btn-block">Sign Up</button>
+  <div class="well"><h1>Welcome to Family Life</h1>
+    <div class="well"><p>Photo Archive | Share | Save For Ever | Access anywhere @ Anytime!</p>
+     <% if user_signed_in? %>
+          # do something
+     <% else %>
+       <p>
+         <%= link_to "Log in", new_user_session_path, class: "btn btn-success btn-lg btn-block" %>
+         <%= link_to "Sign up", new_user_registration_path, class: "btn btn-info btn-lg btn-block" %>
+       </p>
+  <% end %>
 </div>
